@@ -4,20 +4,20 @@
 <div class="row">
     <div class="col-sm-8">
         <h3>Ultimas Noticias</h3>
-        <div class="shadow-lg">
-          <div *ngIf="let noticias in newsCard">
-            <div class="card mb-3" style="max-width: 540px;">
-              
-              
+
+          <ng-container *ngIf="newsCard$ | async as newsSection">
+            <div class="card mb-3 shadow-lg"  *ngFor="let recentnews of newsSection ">
+
+
                   <div class="card-body">
-                    <h5 class="card-title">Juan Perez</h5>
-                    <p class="card-text">Sep 5, 1986</p>
-                
-                 
-               
-              </div>
+                    <a  [routerLink]="['/news', recentnews.id]"><h5 class="card-title">{{recentnews.title}}</h5></a>
+                    <p class="card-text">{{recentnews.content}}</p>
+
+
+
+                  </div>
             </div>
-          </div>
+          </ng-container>
             <!-- <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                   <div class="carousel-item active">
@@ -39,7 +39,7 @@
                   <span class="visually-hidden">Next</span>
                 </button>
               </div> -->
-        </div>
+
     </div>
     <div class="col-sm-4">
         <h3>Cumpleaneros del Mes</h3>
@@ -53,7 +53,7 @@
                     <div class="card-body">
                       <h5 class="card-title">Juan Perez</h5>
                       <p class="card-text">Sep 5, 1986</p>
-                  
+
                     </div>
                   </div>
                 </div>
@@ -67,13 +67,13 @@
                     <div class="card-body">
                       <h5 class="card-title">Monica Lopez</h5>
                       <p class="card-text">Sep 16, 1984</p>
-                  
+
                     </div>
                   </div>
                 </div>
               </div>
         </div>
-       
+
     </div>
 </div>
 

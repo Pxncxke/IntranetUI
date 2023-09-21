@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NewsModel } from './models/news-home-model';
+import { HomeService } from './services/home.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -8,11 +10,22 @@ import { NewsModel } from './models/news-home-model';
 })
 export class HomeComponent implements OnInit {
 
-  newsCard?: NewsModel;
+  newsCard$?: Observable<NewsModel[]>;
+
+/**
+ *
+ */
+constructor(private homeService: HomeService) {
+
+}
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.newsCard$ = this.homeService.getLatestNews();
   }
 
-  
+
+  onHomeLoad(){
+
+  }
+
 }

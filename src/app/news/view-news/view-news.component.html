@@ -1,0 +1,15 @@
+<div class="container">
+  <ng-container *ngIf="newsviews$ | async as newsView">
+    <div class="card mb-3 shadow-lg"  >
+
+
+          <div class="card-body">
+            <h5 class="card-title">{{newsView.title}}</h5>
+            <p class="card-text">{{newsView.content}}</p>
+
+
+
+          </div>
+    </div>
+  </ng-container>
+</div>>

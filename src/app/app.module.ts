@@ -10,6 +10,7 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { HomeNewsComponent } from './news/home-news/home-news.component';
+import { ViewNewsComponent } from './news/view-news/view-news.component';
 
 
 
@@ -19,7 +20,8 @@ import { HomeNewsComponent } from './news/home-news/home-news.component';
     NavbarComponent,
     AddNewsComponent,
     HomeComponent,
-    HomeNewsComponent
+    HomeNewsComponent,
+    ViewNewsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,17 @@
-<p>home-news works!</p>
+<div class="container ">
+  <h3 class="text-center">Noticias</h3>
+
+  <ng-container *ngIf="newsAll$ | async as newsSection">
+    <div class="card mb-3 shadow-lg"  *ngFor="let recentnews of newsSection " style="margin-left: 20%; margin-right: 20%;">
+
+
+          <div class="card-body">
+            <a  [routerLink]="['/news', recentnews.id]"><h5 class="card-title">{{recentnews.title}}</h5></a>
+            <p class="card-text">{{recentnews.content}}</p>
+
+
+
+          </div>
+    </div>
+  </ng-container>
+</div>>
